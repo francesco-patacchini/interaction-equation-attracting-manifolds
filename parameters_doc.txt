@@ -1,0 +1,64 @@
+Parameters documentation
+------------------------
+
+
+_dim -- space dimension, either 1 or 2 at the moment
+_n -- number of particles in the simulation
+
+_initM -- vector containing the initial manifolds, the options being given below
+_randomness -- type of initialisation, one of "UG" (uniform grid, only works on
+    rectangles for now), "RPUG" (slightly perturbed uniform grid), "RS" (random
+    sample)
+_amp -- used to quantify the perturbation for "RPUG" above
+
+_scheme -- the numerical scheme used, can be:
+    - GFP(tol) for the projected gradient flow with convergence tolerance tol
+    - GFeps(tol,ε) for the epsilon gradient flow with convergence tolerance
+        given by tol and epsilon parameter ε
+    - LBFGS_Optim(tol,ε) for the LBFGS method from the Optim package applied
+        to the epsilon interaction energy
+    - BFGS_Optim(tol,ε) for the BFGS method from the Optim package, applied
+        to the epsilon interaction energy
+    - CG_Optim(tol,ε) for the Conjugate Gradient method from the Optim package,
+        applied to the epsilon interaction energy
+    - GD_Optim(tol,ε) for the Gradient Descent method from the Optim package,
+        applied to the epsilon interaction energy
+_finalT -- final time of simulation in case we do not want to wait for the
+    convergence tolerance to be reached, can be Inf
+_corrdt -- a multiplicative factor of the time step so as to increase or
+    decrease it, for the GFP and GFeps schemes only
+_pert -- whether or not we want to perturb the particles at the end of each
+    time step to escape an eventual local minimum, can be true or false
+_sampling -- sampling method used to sample the boundary of the manifold, can
+    be either "Pointwise" (for a scatter approximation of the boundary) or
+    "Linear" (for a piecewise linear approximation)
+
+_W -- interaction potential, can be:
+    - Constant() for the potential identically equal to zero
+    - Inverse(a,b) for the potential W(r) = 1/(1 + ar^b)
+    - InverseAttr(a,b) for the potential W(r) = -1/(1 + ar^b)
+    - Exponential(a,b) for W(r) = exp(-ar^b)
+    - Linear(a,b) for W(r) = ar^b
+_M -- vector of manifolds, each manifold can be:
+    - Point1d(c) for a point centred at c in dimension 1
+    - R1() for all of R
+    - Interval(c,r,s) for an interval centred at c with radius r
+    - Point2d(c) for a point centred at c in dimension 2
+    - R2() for all of R^2
+    - Rectangle(c,a,b,s) for a rectangle centred at c with x-radius a, y-radius
+        b
+    - Disc(c,r,s) for a disc centred at c with radius r
+    - Ellipse(c,a,b,s) for an ellipse centred at c with x-radius a, y-radius b
+    - Bean(c,n,s) for a bean centred at c with neck amplitude quantified by n
+    - Plectrum(c,α,s) for a weird (plectrum-like) shape centred at c with
+        openness parameter α
+    (The s parameter stands for the side of the manifold we are interested in,
+    can be one of "Int" (interior), "Bdry" (boundary) or "Ext" (exterior).)
+_union -- whether we take the union of the manifolds in _M or we take their
+    intersection, can be true (for the union) or false (for the intersection)
+
+_plots -- whether or not we plot results (when true, a file named
+time_energy.txt is generated together with the plots; it is at each run)
+_log -- whether or not the time plots should be on a log scale
+_arrows -- whether or not to plot the initial gradient field
+_title -- whether or not to show titles on the plots
