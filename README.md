@@ -20,6 +20,6 @@ scheme, time step, and geometry can be found in
 `/src/parameters.jl`. Please, read the file `/parameters_doc.txt` for a
 description of every parameter.
 
-## Licence
+## License
 
-Read file `/LICENCE.md`.
+Read file `/LICENSE`.
