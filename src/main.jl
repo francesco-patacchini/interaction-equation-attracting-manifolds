@@ -2,6 +2,8 @@
 ## MAIN FILE ###################################################################
 ################################################################################
 
+# Authors: Francesco S. Patacchini and Dejan Slepcev (2019--2021)
+
 # Description:
 #   We approximate of the interaction equation on a manifold M (or union, or
 # intersection of manifolds), that is, the equation
