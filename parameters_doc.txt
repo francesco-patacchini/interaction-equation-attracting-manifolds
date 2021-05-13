@@ -62,3 +62,8 @@ time_energy.txt is generated together with the plots; it is at each run)
 _log -- whether or not the time plots should be on a log scale
 _arrows -- whether or not to plot the initial gradient field
 _title -- whether or not to show titles on the plots
+
+
+Note: In order to add interaction potentials and manifolds which are
+not listed above, see and amend the source file toolbox.jl at lines 76 through
+110 for the potentials and lines 116 through 199 for the manifolds. 
