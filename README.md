@@ -11,7 +11,7 @@ Please, cite this paper and this GitHub page if you use the code for your work.
 ## Run code
 
 To run the code, create a directory called `/plots` in the source
-folder. Then, from there, execute `julia main.jl`. The main homepage for Julia can be found at <http://www.julialang.org>.
+folder. Then, from there, execute `julia main.jl`. The main homepage for Julia can be found at <www.julialang.org>.
 
 ## Use code 
 
