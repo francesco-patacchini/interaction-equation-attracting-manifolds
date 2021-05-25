@@ -7,7 +7,7 @@ _n -- number of particles in the simulation
 
 _initM -- vector containing the initial manifolds, the options being given below
 _randomness -- type of initialisation, one of "UG" (uniform grid, only works on
-    rectangles for now), "RPUG" (slightly perturbed uniform grid), "RS" (random
+    rectangles for now), "RPUG" (randomly perturbed uniform grid), "RS" (random
     sample)
 _amp -- used to quantify the perturbation for "RPUG" above
 
@@ -26,7 +26,8 @@ _scheme -- the numerical scheme used, can be:
 _finalT -- final time of simulation in case we do not want to wait for the
     convergence tolerance to be reached, can be Inf
 _corrdt -- a multiplicative factor of the time step so as to increase or
-    decrease it, for the GFP and GFeps schemes only
+    decrease it, for the GFP and GFeps schemes only (the time step being decided
+    automatically within the code using a backtracking linesearch)
 _pert -- whether or not we want to perturb the particles at the end of each
     time step to escape an eventual local minimum, can be true or false
 _sampling -- sampling method used to sample the boundary of the manifold, can
