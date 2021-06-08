@@ -4,7 +4,7 @@ Source code associated with the paper *The nonlocal-interaction
 equation near attracting manifolds* By Francesco S. Patacchini and
 Dejan Slepčev.
 
-arXiv link to paper:
+arXiv link to paper: <http://arxiv.org/abs/2106.01823>.
 
 Please, cite this paper and this GitHub page if you use the code for your work.
 
